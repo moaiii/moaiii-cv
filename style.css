@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono");
+* {
+  font-family: 'Cutive Mono', monospace; }
+
+div {
+  overflow: hidden; }
+
+h1, h2, h3, h4, h5, p, li {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.4rem; }
+
+h2 {
+  opacity: 1; }
+
+h3 {
+  opacity: 0.9; }
+
+h4 {
+  opacity: 0.8; }
+
+h5 {
+  opacity: 0.7; }
+
+p, li {
+  font-size: 0.8rem;
+  opacity: 0.6; }
+
+body {
+  background-color: #111;
+  color: white;
+  margin-top: 3rem; }
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+      margin-top: 1rem; } }
+
+section, .projects {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.name {
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+  .name .firstname {
+    font-size: 1.5rem;
+    opacity: 1; }
+    @media (max-width: 768px) {
+      .name .firstname {
+        font-size: 1.5rem; } }
+    @media (max-width: 425px) {
+      .name .firstname {
+        font-size: 1rem; } }
+  .name .lastname {
+    font-size: 3rem;
+    text-align: left;
+    opacity: 1;
+    color: darkturquoise; }
+    @media (max-width: 768px) {
+      .name .lastname {
+        font-size: 5rem; } }
+    @media (max-width: 425px) {
+      .name .lastname {
+        font-size: 3rem; } }
+
+.info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  @media (max-width: 425px) {
+    .info p {
+      margin: 0 0 1rem 0; } }
+
+.mission {
+  grid-area: mission; }
+  @media (max-width: 425px) {
+    .mission p:nth-of-type(2) {
+      margin-top: 2rem; } }
+
+.jobs {
+  grid-area: jobs;
+  display: flex;
+  flex-direction: column; }
+
+.job__description {
+  padding-right: 5rem; }
+  @media (max-width: 768px) {
+    .job__description {
+      padding-right: 1rem; } }
+
+.classes__container {
+  padding-right: 5rem; }
+  @media (max-width: 768px) {
+    .classes__container {
+      padding-right: 1rem; } }
+
+.projects {
+  grid-area: projects; }
+
+.project {
+  padding-left: 1rem; }
+
+.project__description {
+  padding-left: 1rem; }
+
+.schools {
+  grid-area: schools; }
+
+.school, .job {
+  padding-left: 1rem; }
+
+.stack {
+  grid-area: stack; }
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas: "name info jobs jobs" "mission mission jobs jobs" "schools schools jobs jobs" "projects stack jobs jobs";
+  grid-gap: 1rem 1rem; }
+  @media (max-width: 768px) {
+    .wrapper {
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 25% 25% 25% 25%;
+      grid-template-areas: "name info jobs jobs" "mission mission jobs jobs" "schools schools jobs jobs" "projects stack jobs jobs"; } }
+  @media (max-width: 768px) {
+    .wrapper {
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+      grid-template-areas: "name" "info" "mission" "jobs" "schools" "projects" "stack"; } }
+
+.job {
+  max-width: 100%; }
+
+section {
+  padding: 0.5rem;
+  transition: all 0.5s ease; }
+  section:hover {
+    transition: all 0.5s ease;
+    opacity: 1; }
+    section:hover h3 {
+      color: darkturquoise; }
+
+.title {
+  font-size: 2em;
+  position: relative;
+  margin: 0 auto 1em;
+  padding: 1em 1em .25em 1em;
+  text-align: center;
+  text-transform: uppercase; }
+
+.title:after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 240px;
+  height: 4px;
+  margin-left: -120px;
+  content: '';
+  background-color: #fff; }
+
+/* Clip text element */
+.clip-text {
+  font-size: 6em;
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  margin: .25em;
+  padding: .5em .75em;
+  /* Color fallback */
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.clip-text:before,
+.clip-text:after {
+  position: absolute;
+  content: ''; }
+
+/* Background */
+.clip-text:before {
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: inherit; }
+
+/* Text Background (black zone) */
+.clip-text:after {
+  position: absolute;
+  z-index: -1;
+  top: .125em;
+  right: .125em;
+  bottom: .125em;
+  left: .125em;
+  background-color: #000; }
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+  background-position: -.65em 0; }
+
+.clip-text--no-textzone:after {
+  content: none; }
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%; }
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+.clip-text_one {
+  background-image: url(http://cdn8.staztic.com/app/a/6278/6278761/hd-abstract-wallpapers-1-0-s-307x512.jpg); }
+
+.--clickable {
+  cursor: pointer; }
+  .--clickable:hover {
+    text-decoration: line-through; }
+
+.--focusable h2 {
+  transition: color 0.5s ease; }
+  .--focusable h2:hover {
+    transition: color 0.5s ease;
+    color: darkturquoise; }
+
+.scroll-to-top {
+  cursor: pointer;
+  display: none; }
+  @media (max-width: 425px) {
+    .scroll-to-top {
+      display: block; } }
+
+.info__container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  align-content: center; }
+  @media (max-width: 768px) {
+    .info__container {
+      width: 40%;
+      padding: 1rem 0; } }
+
+.info__website {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7; }
+  .info__website.linkedin {
+    background: url("./assets/svg/linkedin-logo.svg");
+    background-size: cover; }
+  .info__website.github {
+    background: url("./assets/svg/github-logo.svg");
+    background-size: cover; }
+  .info__website.email {
+    background: url("./assets/svg/email-logo.svg");
+    background-size: cover; }
+  .info__website.website {
+    background: url("./assets/svg/website-logo.svg");
+    background-size: cover; }
+  .info__website.quora {
+    background: url("./assets/svg/quora-logo.svg");
+    background-size: cover; }
+  .info__website:hover {
+    opacity: 1; }
+
+/*# sourceMappingURL=style.css.map */
